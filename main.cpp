@@ -1,4 +1,3 @@
-// main.cpp
 #include <iostream>
 #include "rom.h"
 #include "ram.h"
@@ -6,7 +5,8 @@
 #include "console.h"
 #include "cpu.h"
 
-int main() {
+int main()
+{
   Console cons;
   Rom rom(1000);
   Ram ram(1000);
@@ -22,5 +22,4 @@ int main() {
 
   cpu.setup_memory(&mmu);
   cpu.setup_io(&cons);
-
 }

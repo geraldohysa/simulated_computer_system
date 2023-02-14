@@ -1,15 +1,15 @@
-// console.h
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
 #include <iostream>
 #include <string>
 
-class Console {
-    private:
+class Console
+{
+private:
     std::string input_string;
-    
-    public:
+
+public:
     Console();
     void write(int value);
     int read();

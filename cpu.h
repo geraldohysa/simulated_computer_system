@@ -6,8 +6,8 @@
 #include "mmu.h"
 #include "console.h"
 
-
-struct Instruction {
+struct Instruction
+{
     std::string type_;
     int reg;
     int regA;
@@ -20,20 +20,20 @@ struct Instruction {
     std::string str;
 };
 
-class Cpu {
-    private:
-        std::vector<int> registers_;
-        Mmu *memory_;
-        std::vector<Console*> cons_;
-        int instrPtr;
-    public:
-        Cpu();
-        void setup_memory(Mmu *mem);
-        void setup_io(Console *cons);
-        void run(std::vector<Instruction> instrList);
-        void eval(Instruction instr);
+class Cpu
+{
+private:
+    std::vector<int> registers_;
+    Mmu *memory_;
+    std::vector<Console *> cons_;
+    int instrPtr;
+
+public:
+    Cpu();
+    void setup_memory(Mmu *mem);
+    void setup_io(Console *cons);
+    void run(std::vector<Instruction> instrList);
+    void eval(Instruction instr);
 };
-
-
 
 #endif

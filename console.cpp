@@ -1,15 +1,19 @@
 #include "console.h"
 
-Console::Console() {
+Console::Console()
+{
     input_string = "";
 }
 
-void Console::write(int value) {
+void Console::write(int value)
+{
     std::cout << (char)value;
 }
 
-int Console::read() {
-    if (input_string.empty()) {
+int Console::read()
+{
+    if (input_string.empty())
+    {
         std::cout << "Enter a string: ";
         std::getline(std::cin, input_string);
     }

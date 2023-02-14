@@ -6,20 +6,21 @@
 #include "rom.h"
 #include "ram.h"
 
-class Mmu {
-    private:
-        Rom *rom_;
-        Ram *ram_;
-        int rom_address;
-        int ram_address;
+class Mmu
+{
+private:
+    Rom *rom_;
+    Ram *ram_;
+    int rom_address;
+    int ram_address;
 
-    public:
-        Mmu();
-        void attach(Rom *rom, int address);
-        void attach(Ram *ram, int address);
-        int read(int address);
-        void write(int address, int byte);
-        void initialize(int address, std::string str);
+public:
+    Mmu();
+    void attach(Rom *rom, int address);
+    void attach(Ram *ram, int address);
+    int read(int address);
+    void write(int address, int byte);
+    void initialize(int address, std::string str);
 };
 
 #endif
