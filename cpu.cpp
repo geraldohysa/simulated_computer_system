@@ -74,4 +74,6 @@ void Cpu::eval(Instruction instr)
         instrPtr += registers_[instr.reg];
     else if (instr.type_ == "Halt")
         throw "Execution Stops with Halt";
+    else
+        throw "Invalid Instruction";
 }
