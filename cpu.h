@@ -6,9 +6,11 @@
 #include "mmu.h"
 #include "console.h"
 
+
 struct Instruction
 {
     std::string type_;
+    std::string str;
     int reg;
     int regA;
     int regB;
@@ -17,7 +19,6 @@ struct Instruction
     int port_;
     int address_;
     int number_;
-    std::string str;
 };
 
 class Cpu

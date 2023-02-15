@@ -26,16 +26,16 @@ int Mmu::read(int address)
 
 void Mmu::write(int address, int byte)
 {
-    if (address > rom_address && address <= rom_->capacity_ + rom_address)
+    if (address >= rom_address && address <= rom_->capacity_ + rom_address)
         rom_->write(address, byte);
-    else if (address > ram_address && address <= ram_->capacity_ + ram_address)
+    else if (address >= ram_address && address <= ram_->capacity_ + ram_address)
         ram_->write(address, byte);
 }
 
 void Mmu::initialize(int address, std::string str)
 {
-    if (address > rom_address && address <= rom_->capacity_ + rom_address)
+    if (address >= rom_address && address <= rom_->capacity_ + rom_address)
         rom_->initialize(address, str);
-    else if (address > ram_address && address <= ram_->capacity_ + ram_address)
+    else if (address >= ram_address && address <= ram_->capacity_ + ram_address)
         ram_->initialize(address, str);
 }
